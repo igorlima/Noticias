@@ -1,4 +1,4 @@
 Noticias
 ========
 
-Projeto pata capturar notícias de sites financeiros
+Projeto para capturar notícias de sites financeiros
