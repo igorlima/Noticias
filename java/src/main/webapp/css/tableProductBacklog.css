@@ -1,0 +1,55 @@
+﻿.column-item {
+   width: 50px;
+   text-align: center;
+}
+
+.column-descricao {
+	
+}
+
+.column-estimativa {
+   width: 80px;
+   text-align: center;
+}
+
+.column-by {
+   width: 100px;
+   text-align: center;
+}
+
+.column-ok-true {
+   width: 40px;
+   text-align: center;
+   color: #00FF00;
+}
+
+.column-notas {
+	
+}
+
+.column-ok-false {
+	width: 40px;
+   	text-align: center;
+  	color: #FF0000;
+}
+
+.header-cell {
+   font-size: 11px;
+   text-align: center;
+}
+
+.row-numbercell {
+   width: 15px;
+   text-align: center;
+}
+
+.table-row{
+	background-color: #F5F5F5;
+}
+
+.table-row-odd{
+	background-color: #F8F8FF;
+}
+
+
+	

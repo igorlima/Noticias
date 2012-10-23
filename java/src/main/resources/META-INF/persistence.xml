@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="NoticiasPU" transaction-type="RESOURCE_LOCAL" >
+		<properties>
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="hibernate.cache.use_query_cache" value="true"/>
+			<property name="hibernate.generate_statistics" value="true"/>
+			
+			<property name="hibernate.search.default.directory_provider" 
+			          value="org.hibernate.search.store.FSDirectoryProvider"/>
+			<property name="hibernate.search.default.indexBase" 
+			          value="C:\Users\igorlima\Desktop\caelum\index_noticias"/>
+			<property name="hibernate.search.analyzer" 
+			          value="org.apache.lucene.analysis.br.BrazilianAnalyzer"/>
+			
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="teste">
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/bolsa"/>
+			<property name="javax.persistence.jdbc.user" value="igorribeirolima"/>
+			<property name="javax.persistence.jdbc.password" value="ocf87912"/>
+			
+			<property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider"/>
+			<property name="hibernate.c3p0.min_size" value="1"/>
+			<property name="hibernate.c3p0.max_size" value="10"/>
+			<property name="hibernate.c3p0.timeout" value="180"/>
+			<property name="hibernate.c3p0.idle_test_period" value="100"/>
+			
+			<property name="hibernate.search.default.directory_provider" 
+			          value="org.hibernate.search.store.FSDirectoryProvider"/>
+			<property name="hibernate.search.default.indexBase" 
+			          value="C:\Users\igorlima\Desktop\caelum\index_noticias"/>
+			<property name="hibernate.search.analyzer" 
+			          value="org.apache.lucene.analysis.br.BrazilianAnalyzer"/>
+			          
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider"/>
+			<property name="hibernate.cache.use_query_cache" value="true"/>
+			<property name="hibernate.generate_statistics" value="true"/>
+		</properties>
+	</persistence-unit>
+
+</persistence>

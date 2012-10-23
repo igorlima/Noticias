@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title>Noticias</title>
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    	<script type="text/javascript">
+      		google.load('visualization', '1', {packages: ['table']});
+	    </script>
+	    
+		<script type="text/javascript" src="js/mootools-core.js"></script>
+		<script type="text/javascript" src="js/dataDispatcher.js"></script>
+		<script type="text/javascript" src="js/responseAnalyser.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+	</head>
+	
+	<body>
+		<table>
+			<tr>
+				<td>
+					<label>Data Inicio:</label>
+				</td>
+				<td>
+					<input id="dataInicio" type="text" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Data Fim:</label>
+				</td>
+				<td>
+					<input id="dataFim" type="text" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Pesquisa:</label>
+				</td>
+				<td>
+					<textarea id="sql" rows="4" cols="17"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<a id="avancar" href='#' onclick="pesquisar();">
+						&lt;Pesquisar&gt;
+					</a>
+					<a href="logout.jsp">&lt;Logout&gt;</a>
+				</td>
+			</tr>
+		</table>
+		<div id="table"></div>
+		
+		<script type="text/javascript">
+			function pesquisar(){
+				var dtInicio = convertStringToDate( $('dataInicio').value );
+				dtInicio = ( dtInicio == null ? null : dtInicio.getTime() );
+				var dtFim = convertStringToDate( $('dataFim').value );
+				dtFim = ( dtFim == null ? null : dtFim.getTime() );
+				
+				if( dtInicio == null || dtFim == null ){
+					alert( 'Favor especificar as datas corretamente.' );
+					drawVisualization_tabela_do_resultado_das_pesquisa_das_noticias();
+					return;
+				}else if( $('sql').value.trim() == '' ){
+					alert( 'Favor não deixar o campo de pesquisa vazio.' );
+					drawVisualization_tabela_do_resultado_das_pesquisa_das_noticias();
+					return;
+				}
+				
+				doRequest( setUrlParameter(URL_PESQUISAR_NOTICIAS,dtInicio,dtFim), $('sql').value, 'POST',drawVisualization_tabela_do_resultado_das_pesquisa_das_noticias,null,false);
+			}
+		</script>
+	</body>
+</html>
